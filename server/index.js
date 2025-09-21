@@ -5,8 +5,11 @@ require('dotenv').config();
 
 const app = express();
 // ${process.env.CLIENT_URL || 'http://localhost:3000'}
+// Allow only your frontend
 app.use(cors({
-  origin: `*`
+  origin: "https://you-tube-video-dashboard-vt-d6rv.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
