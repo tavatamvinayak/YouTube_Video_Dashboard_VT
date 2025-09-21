@@ -4,8 +4,9 @@ const  DbConnection  = require('./services/db');
 require('dotenv').config();
 
 const app = express();
+// ${process.env.CLIENT_URL || 'http://localhost:3000'}
 app.use(cors({
-  origin: `${process.env.CLIENT_URL || 'http://localhost:3000'}`
+  origin: `*`
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
